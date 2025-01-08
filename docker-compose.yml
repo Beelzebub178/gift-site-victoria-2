@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+    environment:
+      SECRET: "dlfyQ1bbPV24jz5Fr6zzIUlYasaUrOxl"
+      ADMIN_EMAIL: "ad05exe@tutamail.com"
+      ADMIN_PASSWORD: "}'q1^;X&;h~Se]C"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
+
