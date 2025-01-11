@@ -17,18 +17,22 @@ import { directus } from '@/services/directus';
 const items = ref([]);
 const errorMessage = ref('');
 
-onMounted(async () => {
+async function loadArticles() {
   try {
-    const { data } = await directus.items('articles').readByQuery({
+    console.log('Загрузка статей...');
+    const response = await directus.items('articles').readByQuery({
       fields: ['*'],
       limit: -1,
     });
-    items.value = data;
+    console.log('ответ:', response);
+    items.value = response.data;
   } catch (error) {
     console.error('Ошибка при загрузке статей:', error);
     errorMessage.value = 'Не удалось загрузить статьи. Попробуйте позже.';
   }
-});
+}
+
+onMounted(loadArticles);
 </script>
 
 <style scoped>

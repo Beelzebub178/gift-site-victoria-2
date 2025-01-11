@@ -1,7 +1,3 @@
-<script setup>
-    
-</script>
-
 <template>
     <div class="header">
         <img class="logo" src="./icons/logotip.png" alt="Logo">
