@@ -3,11 +3,6 @@ import MainPage from "./components/MainPage.vue"
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: MainPage,
-  },
-  {
     path: "/main-page",
     name: "MainPage",
     component: MainPage,
